@@ -1,4 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+
+import 'desktop_navigation.dart';
 
 class NavigationItem {
   final String title;
@@ -15,8 +18,8 @@ class NavigationItem {
 }
 
 class NavigationMain extends StatefulWidget {
-  const NavigationMain({super.key, required this.updateNavigation});
-  final Function(int) updateNavigation;
+  const NavigationMain({super.key, required this.children});
+  final Widget children;
 
   @override
   State<NavigationMain> createState() => _CounterWidgetState();
@@ -31,6 +34,11 @@ class _CounterWidgetState extends State<NavigationMain> {
 
   @override
   Widget build(BuildContext context) {
+    if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
+      return DesktopNavigation(
+        children: widget.children,
+      );
+    }
     return const Text('Navigation Main');
   }
 }
