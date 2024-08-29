@@ -14,12 +14,18 @@ class NavigationMain extends StatefulWidget {
 class _CounterWidgetState extends State<NavigationMain> {
   @override
   Widget build(BuildContext context) {
-    if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
-      return DesktopNavigation(
-        menus: navigationItems,
-      );
-    } else {
-      return MobileNavigation(menus: navigationItems);
-    }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 600) {
+          // 当屏幕宽度小于600时返回移动端导航
+          return MobileNavigation(menus: navigationItems);
+        } else {
+          // 当屏幕宽度大于等于600时返回桌面端导航
+          return DesktopNavigation(
+            menus: navigationItems,
+          );
+        }
+      },
+    );
   }
 }
