@@ -1,12 +1,13 @@
+import 'package:djwl_app/widgets/navigation/menu.dart';
 import 'package:flutter/material.dart';
 
 class MenuInfoModel extends ChangeNotifier {
-  int _menuSelectIndex = 0;
+  NavigationItem _selectedNavigation = navigationItems[0];
 
-  int get menuSelectIndex => _menuSelectIndex;
+  NavigationItem get selectedNavigation => _selectedNavigation;
 
-  void updateMenuSelectIndex(int index) {
-    _menuSelectIndex = index;
+  void updateMenuSelectIndex(NavigationItem item) {
+    _selectedNavigation = item;
     notifyListeners();
   }
 }

@@ -1,4 +1,3 @@
-import 'package:djwl_app/widgets/navigation/main.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,6 +5,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NavigationMain(children: Text('hellosss'));
+    return const Text('首页');
   }
 }

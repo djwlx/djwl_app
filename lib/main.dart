@@ -1,7 +1,7 @@
 import 'package:djwl_app/models/menu_info.dart';
+import 'package:djwl_app/widgets/navigation/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'pages/home/main.dart';
 
 void main() {
   runApp(
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const NavigationMain(),
     );
   }
 }
