@@ -1,0 +1,19 @@
+flutter_launcher_icons:
+  image_path: 'assets/images/app_icon.png'
+
+  # android
+  android: true
+  min_sdk_android: 21
+  # ios
+  ios: true
+  remove_alpha_channel_ios: true
+  # web
+  web:
+    generate: true
+  # windows
+  windows:
+    generate: true
+    icon_size: 48 # min:48, max:256, default: 48
+  # macos
+  macos:
+    generate: true
