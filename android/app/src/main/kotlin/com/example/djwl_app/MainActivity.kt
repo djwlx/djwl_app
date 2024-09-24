@@ -1,4 +1,4 @@
-package com.example.djwl_app
+package com.djwl.app
 
 import io.flutter.embedding.android.FlutterActivity
 
